@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "47a1c4a5-0dc9-49c9-879e-1a0ef743db0a",
+		"name": "RBS_Book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/books?isbn=12345&cost=50&author=dinesh&genre=bigraphy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cost\":\"50\",\n\t\"author\":\"dinesh\",\n\t\"genre\":\"DDji\",\n\t\"isbn\":\"DD-20198797-IN\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/saveBook?cost=50&author=Anne Frank&genre=The Diary of Anne Frank&isbn=DN-20198797-IN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"saveBook"
+					],
+					"query": [
+						{
+							"key": "cost",
+							"value": "50"
+						},
+						{
+							"key": "author",
+							"value": "Anne Frank"
+						},
+						{
+							"key": "genre",
+							"value": "The Diary of Anne Frank"
+						},
+						{
+							"key": "isbn",
+							"value": "DN-20198797-IN"
+						}
+					]
+				},
+				"description": "SaveBook in Store"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/updateBook/DD-20198797-IN",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cost\":\"50\",\n\t\"author\":\"dinesh\",\n\t\"genre\":\"MySelfExplanation\",\n\t\"isbn\":\"DD-20198797-DN\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/updateBook/DD-20198797-IN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"updateBook",
+						"DD-20198797-IN"
+					]
+				},
+				"description": "Update an existing book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/bookList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bookList",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bookList"
+					]
+				},
+				"description": "List all books from store"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/findBooks/?bookAuthor=dinesh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/findBooks/?bookAuthor=dinesh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"findBooks",
+						""
+					],
+					"query": [
+						{
+							"key": "bookAuthor",
+							"value": "dinesh"
+						}
+					]
+				},
+				"description": "Find Book by Author"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/searchBook/DD-20198797-IN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/searchBook/DD-20198797-IN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"searchBook",
+						"DD-20198797-IN"
+					]
+				},
+				"description": "Get Book by ISBN"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/removeBook/DD-20198797-DN",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/removeBook/DD-20198797-DN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"removeBook",
+						"DD-20198797-DN"
+					]
+				},
+				"description": "Remove a book from store"
+			},
+			"response": []
+		}
+	]
+}
